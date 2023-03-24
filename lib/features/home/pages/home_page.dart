@@ -1,10 +1,9 @@
 import 'package:cantwait28/features/add/page/add_page.dart';
 import 'package:cantwait28/features/details/pages/details_page.dart';
 import 'package:cantwait28/features/home/cubit/home_cubit.dart';
+import 'package:cantwait28/models/item_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
-import '../../../models/item_model.dart';
 import '../../../repositories/items_repository.dart';
 
 class HomePage extends StatelessWidget {
@@ -72,8 +71,9 @@ class _HomePageBody extends StatelessWidget {
                       ),
                     ),
                   ),
+
+                  //USUWANIE
                   confirmDismiss: (direction) async {
-                    // only from right to left
                     return direction == DismissDirection.endToStart;
                   },
                   onDismissed: (direction) {
@@ -148,7 +148,7 @@ class _ListViewItem extends StatelessWidget {
                           ),
                           const SizedBox(height: 10),
                           Text(
-                            itemModel.relaseDate.toString(),
+                            itemModel.relaseDateFormated(),
                           ),
                         ],
                       ),
