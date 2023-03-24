@@ -5,6 +5,7 @@ import 'package:cantwait28/models/item_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../repositories/items_repository.dart';
+import '../../auth/pages/user_profile.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({
@@ -16,6 +17,18 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Can\'t Wait 🤩'),
+        actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => const UserProfile(),
+                ),
+              );
+            },
+            icon: const Icon(Icons.person),
+          ),
+        ],
       ),
       body: const _HomePageBody(),
       floatingActionButton: FloatingActionButton(
